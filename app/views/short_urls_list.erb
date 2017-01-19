@@ -1,0 +1,12 @@
+<% if @database.empty? %>
+  <h4>Por ahora no hay urls registradas...</h4>
+<% else %>
+  <h4>Your new urls & its visits:</h4>
+<% @database.each do |urls| %>
+  <% short = urls.short_url %>
+  <table>
+  <h4><td><a href="<%= short %>"><%= "http://alux_urls/" + short %></a></td></h4>
+  <h4><td><%= urls.click_count %> visits</td></h4>
+  </table>  
+  <% end %>
+<% end %>
